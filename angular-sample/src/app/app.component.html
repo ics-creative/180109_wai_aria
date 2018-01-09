@@ -1,0 +1,48 @@
+<div role="application">
+  <ul role="tablist">
+    <li>
+      <button aria-controls="panel1"
+              role="tab"
+              [attr.aria-selected]="tab === 'panel1'"
+              (click)="_handleClick($event)">
+        Windows
+      </button>
+    </li>
+    <li>
+      <button aria-controls="panel2"
+              role="tab"
+              [attr.aria-selected]="tab === 'panel2'"
+              (click)="_handleClick($event)">
+        Mac OS X
+      </button>
+    </li>
+    <li>
+      <button aria-controls="panel3"
+              role="tab"
+              [attr.aria-selected]="tab === 'panel3'"
+              (click)="_handleClick($event)">
+        Linux
+      </button>
+    </li>
+  </ul>
+  <div id="panel1"
+       aria-labelledby="tab1"
+       [attr.aria-hidden]="tab !== 'panel1'"
+       role="tabpanel">
+    Windowsは、マイクロソフトのオペレーティング
+    システムまたはオペレーティング環境で、1985年11月に初めてリリースされた。
+  </div>
+  <div id="panel2"
+       aria-labelledby="tab2"
+       [attr.aria-hidden]="tab !== 'panel2'"
+       role="tabpanel">
+    アップルのMacintoshコンピュータ用の現行オペレーティングシステム (OS)
+    である。バージョン9まで続いたそれまでのMac OSの後継として、BSD UNIXベースで新たに作られた。
+  </div>
+  <div id="panel3"
+       aria-labelledby="tab3"
+       [attr.aria-hidden]="tab !== 'panel3'"
+       role="tabpanel">
+    Linuxとは、一般的にはUNIXライクなコンピュータ用オペレーティングシステム（OS）の一群を指し、厳密にはその中核となる部分であるカーネルのことである。
+  </div>
+</div>
