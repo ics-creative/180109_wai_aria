@@ -1,46 +1,46 @@
 /* 装飾 */
 
 [role="tablist"] {
-    display: flex;
+  display: flex;
 }
 
 ul {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 li {
-    list-style: none;
-    margin: 0 1px;
+  list-style: none;
+  margin: 0 1px;
 }
 
 button {
-    appearance: none;
+  appearance: none;
 
-    padding: 10px 20px;
-    margin: 0;
-    border: none;
-    background: lightgray;
-    cursor: pointer;
+  padding: 10px 20px;
+  margin: 0;
+  border: none;
+  background: lightgray;
+  cursor: pointer;
 }
 
 [role="tabpanel"] {
-    border: 1px solid lightgray;
-    padding: 2rem;
-    max-width: 480px;
-    line-height: 175%;
+  border: 1px solid lightgray;
+  padding: 2rem;
+  max-width: 480px;
+  line-height: 175%;
 }
 
 /* UI制御のための指定 */
 [aria-hidden="true"] {
-    display: none;
+  display: none;
 }
 
 [aria-hidden="false"] {
-    display: block;
+  display: block;
 }
 
 [aria-selected="true"] {
-    background-color: royalblue;
-    color: white;
+  background-color: royalblue;
+  color: white;
 }
