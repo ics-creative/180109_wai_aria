@@ -1,0 +1,35 @@
+/* 装飾 */
+ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+li {
+  padding: 10px 20px;
+  margin: 0;
+  border: none;
+  background: lightgray;
+  list-style: none;
+}
+
+#panel1, #panel2, #panel3 {
+  border: 1px solid lightgray;
+  padding: 2rem;
+  max-width: 480px;
+  line-height: 175%;
+}
+
+/* UI制御のための指定 */
+div.visible {
+  display: block;
+}
+
+div.hidden {
+  display: none;
+}
+
+ul > li.active {
+  background-color: royalblue;
+  color: white;
+}
