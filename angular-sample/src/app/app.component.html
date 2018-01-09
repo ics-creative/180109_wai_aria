@@ -1,48 +1,43 @@
 <div role="application">
   <ul role="tablist">
     <li>
-      <button aria-controls="panel1"
-              role="tab"
+      <button role="tab"
+              aria-controls="panel1"
               [attr.aria-selected]="tab === 'panel1'"
               (click)="_handleClick($event)">
-        Windows
+        カベルネ・ソーヴィニョン
       </button>
     </li>
     <li>
-      <button aria-controls="panel2"
-              role="tab"
+      <button role="tab"
+              aria-controls="panel2"
               [attr.aria-selected]="tab === 'panel2'"
               (click)="_handleClick($event)">
-        Mac OS X
+        メルロー
       </button>
     </li>
     <li>
-      <button aria-controls="panel3"
-              role="tab"
+      <button role="tab"
+              aria-controls="panel3"
               [attr.aria-selected]="tab === 'panel3'"
               (click)="_handleClick($event)">
-        Linux
+        ピノ・ノワール
       </button>
     </li>
   </ul>
-  <div id="panel1"
-       aria-labelledby="tab1"
-       [attr.aria-hidden]="tab !== 'panel1'"
-       role="tabpanel">
-    Windowsは、マイクロソフトのオペレーティング
-    システムまたはオペレーティング環境で、1985年11月に初めてリリースされた。
+  <div role="tabpanel"
+       id="panel1"
+       [attr.aria-hidden]="tab !== 'panel1'">
+    カベルネ・ソーヴィニョンはブドウの一品種。赤ワインの中でも渋くて重い味わいが特徴です。
   </div>
-  <div id="panel2"
-       aria-labelledby="tab2"
-       [attr.aria-hidden]="tab !== 'panel2'"
-       role="tabpanel">
-    アップルのMacintoshコンピュータ用の現行オペレーティングシステム (OS)
-    である。バージョン9まで続いたそれまでのMac OSの後継として、BSD UNIXベースで新たに作られた。
+  <div role="tabpanel"
+       id="panel2"
+       [attr.aria-hidden]="tab !== 'panel2'">
+    メルローはブドウの一品種。味はカベルネ・ソーヴィニョンほど酸味やタンニンは強くなく、芳醇でまろやかで繊細な味わいです。
   </div>
-  <div id="panel3"
-       aria-labelledby="tab3"
-       [attr.aria-hidden]="tab !== 'panel3'"
-       role="tabpanel">
-    Linuxとは、一般的にはUNIXライクなコンピュータ用オペレーティングシステム（OS）の一群を指し、厳密にはその中核となる部分であるカーネルのことである。
+  <div role="tabpanel"
+       id="panel3"
+       [attr.aria-hidden]="tab !== 'panel3'">
+    ピノ・ノワールはブドウの一品種。カベルネ・ソーヴィニョンと対照的で比較的軽口な味わいです。
   </div>
 </div>

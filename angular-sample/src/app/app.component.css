@@ -11,18 +11,24 @@ ul {
 
 li {
   list-style: none;
-  margin: 0;
+  margin: 0 1px;
 }
 
 button {
   appearance: none;
 
   padding: 10px 20px;
+  margin: 0;
+  border: none;
+  background: lightgray;
+  cursor: pointer;
 }
 
 [role="tabpanel"] {
   border: 1px solid lightgray;
   padding: 2rem;
+  max-width: 480px;
+  line-height: 175%;
 }
 
 /* UI制御のための指定 */
