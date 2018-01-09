@@ -66,19 +66,19 @@ export default class App extends Component {
             </button>
           </li>
         </ul>
-        <div id="panel1"
-             aria-hidden={this.state.tab !== 'panel1'}
-             role="tabpanel">
+        <div role="tabpanel"
+             id="panel1"
+             aria-hidden={this.state.tab !== 'panel1'}>
           カベルネ・ソーヴィニョンはブドウの一品種。赤ワインの中でも渋くて重い味わいが特徴です。
         </div>
-        <div id="panel2"
-             aria-hidden={this.state.tab !== 'panel2'}
-             role="tabpanel">
+        <div role="tabpanel"
+             id="panel2"
+             aria-hidden={this.state.tab !== 'panel2'}>
           メルローはブドウの一品種。味はカベルネ・ソーヴィニョンほど酸味やタンニンは強くなく、芳醇でまろやかで繊細な味わいです。
         </div>
-        <div id="panel3"
-             aria-hidden={this.state.tab !== 'panel3'}
-             role="tabpanel">
+        <div role="tabpanel"
+             id="panel3"
+             aria-hidden={this.state.tab !== 'panel3'}>
           ピノ・ノワールはブドウの一品種。カベルネ・ソーヴィニョンと対照的で比較的軽口な味わいです。
         </div>
       </div>
