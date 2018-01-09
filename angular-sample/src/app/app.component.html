@@ -1,6 +1,6 @@
 <div role="application">
   <ul role="tablist">
-    <li>
+    <li role="presentation">
       <button role="tab"
               aria-controls="panel1"
               [attr.aria-selected]="tab === 'panel1'"
@@ -8,7 +8,7 @@
         カベルネ・ソーヴィニョン
       </button>
     </li>
-    <li>
+    <li role="presentation">
       <button role="tab"
               aria-controls="panel2"
               [attr.aria-selected]="tab === 'panel2'"
@@ -16,7 +16,7 @@
         メルロー
       </button>
     </li>
-    <li>
+    <li role="presentation">
       <button role="tab"
               aria-controls="panel3"
               [attr.aria-selected]="tab === 'panel3'"
