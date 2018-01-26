@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector   : 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls  : ['./app.component.css'],
 })
 export class AppComponent {
   tab = 'panel1';
@@ -13,9 +13,9 @@ export class AppComponent {
    * @param event イベントオブジェクトです。
    * @private
    */
-  _handleClick(event) {
+   _handleClick(event: MouseEvent): void {
     // イベント発生源の要素を取得
-    const element = event.currentTarget;
+    const element = event.currentTarget as HTMLElement;
 
     // aria-controls 属性の値を取得
     const tabState = element.getAttribute('aria-controls');

@@ -29,7 +29,7 @@ export default class App extends Component {
     const element = event.currentTarget;
 
     // aria-controls 属性の値を取得
-    const tabState = element.getAttribute('aria-controls');
+    const tabState = element.dataset['controls'];
 
     // プロパティーを更新
     this.setState({
@@ -40,45 +40,33 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <ul role="tablist">
-          <li role="presentation">
-            <button role="tab"
-                    aria-controls="panel1"
-                    aria-selected={this.state.tab === 'panel1'}
-                    onClick={this._handleClick}>
-              カベルネ・ソーヴィニョン
-            </button>
+        <ul>
+          <li data-controls="panel1"
+              className={this.state.tab === 'panel1' ? 'active' : ''}
+              onClick={this._handleClick}>
+            カベルネ・ソーヴィニョン
           </li>
-          <li role="presentation">
-            <button role="tab"
-                    aria-controls="panel2"
-                    aria-selected={this.state.tab === 'panel2'}
-                    onClick={this._handleClick}>
-              メルロー
-            </button>
+          <li data-controls="panel2"
+              className={this.state.tab === 'panel2' ? 'active' : ''}
+              onClick={this._handleClick}>
+            メルロー
           </li>
-          <li role="presentation">
-            <button role="tab"
-                    aria-controls="panel3"
-                    aria-selected={this.state.tab === 'panel3'}
-                    onClick={this._handleClick}>
-              ピノ・ノワール
-            </button>
+          <li data-controls="panel3"
+              className={this.state.tab === 'panel3' ? 'active' : ''}
+              onClick={this._handleClick}>
+            ピノ・ノワール
           </li>
         </ul>
-        <div role="tabpanel"
-             id="panel1"
-             aria-hidden={this.state.tab !== 'panel1'}>
+        <div id="panel1"
+             className={this.state.tab === 'panel1' ? 'visible' : 'hidden'}>
           カベルネ・ソーヴィニョンはブドウの一品種。赤ワインの中でも渋くて重い味わいが特徴です。
         </div>
-        <div role="tabpanel"
-             id="panel2"
-             aria-hidden={this.state.tab !== 'panel2'}>
+        <div id="panel2"
+             className={this.state.tab === 'panel2' ? 'visible' : 'hidden'}>
           メルローはブドウの一品種。味はカベルネ・ソーヴィニョンほど酸味やタンニンは強くなく、芳醇でまろやかで繊細な味わいです。
         </div>
-        <div role="tabpanel"
-             id="panel3"
-             aria-hidden={this.state.tab !== 'panel3'}>
+        <div id="panel3"
+             className={this.state.tab === 'panel3' ? 'visible' : 'hidden'}>
           ピノ・ノワールはブドウの一品種。カベルネ・ソーヴィニョンと対照的で比較的軽口な味わいです。
         </div>
       </div>

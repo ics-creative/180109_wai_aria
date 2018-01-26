@@ -1,30 +1,19 @@
 /* 装飾 */
-
-[role="tablist"] {
-  display: flex;
-}
-
 ul {
   padding: 0;
   margin: 0;
+  display: flex;
 }
 
 li {
-  list-style: none;
-  margin: 0 1px;
-}
-
-button {
-  appearance: none;
-
   padding: 10px 20px;
   margin: 0;
   border: none;
   background: lightgray;
-  cursor: pointer;
+  list-style: none;
 }
 
-[role="tabpanel"] {
+#panel1, #panel2, #panel3 {
   border: 1px solid lightgray;
   padding: 2rem;
   max-width: 480px;
@@ -32,15 +21,15 @@ button {
 }
 
 /* UI制御のための指定 */
-[aria-hidden="true"] {
-  display: none;
-}
-
-[aria-hidden="false"] {
+div.visible {
   display: block;
 }
 
-[aria-selected="true"] {
+div.hidden {
+  display: none;
+}
+
+ul > li.active {
   background-color: royalblue;
   color: white;
 }
