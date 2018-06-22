@@ -1,1 +1,7 @@
 .idea
+.vscode
+.DS_Store
+Thumbs.db
+
+yarn.lock
+package-lock.json
