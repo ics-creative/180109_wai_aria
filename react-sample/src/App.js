@@ -12,11 +12,7 @@ const App = () => {
     tab: 'panel1',
   });
 
-  /**
-   * クリックしたときのイベントハンドラーです。
-   * @param event イベントオブジェクトです。
-   * @private
-   */
+  // クリックしたときのイベントハンドラーです。
   const _handleClick = useCallback((event) => {
     // イベント発生源の要素を取得
     const element = event.currentTarget;
@@ -28,7 +24,7 @@ const App = () => {
     setState({
       tab: tabState,
     });
-  });
+  }, []);
 
   return (
     <div>
