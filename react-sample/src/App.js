@@ -13,7 +13,7 @@ const App = () => {
   });
 
   // クリックしたときのイベントハンドラーです。
-  const _handleClick = useCallback((event) => {
+  const handleClick = useCallback((event) => {
     // イベント発生源の要素を取得
     const element = event.currentTarget;
 
@@ -33,7 +33,7 @@ const App = () => {
           <button role="tab"
                   aria-controls="panel1"
                   aria-selected={state.tab === 'panel1'}
-                  onClick={_handleClick}>
+                  onClick={handleClick}>
             カベルネ・ソーヴィニョン
           </button>
         </li>
@@ -41,7 +41,7 @@ const App = () => {
           <button role="tab"
                   aria-controls="panel2"
                   aria-selected={state.tab === 'panel2'}
-                  onClick={_handleClick}>
+                  onClick={handleClick}>
             メルロー
           </button>
         </li>
@@ -49,7 +49,7 @@ const App = () => {
           <button role="tab"
                   aria-controls="panel3"
                   aria-selected={state.tab === 'panel3'}
-                  onClick={_handleClick}>
+                  onClick={handleClick}>
             ピノ・ノワール
           </button>
         </li>

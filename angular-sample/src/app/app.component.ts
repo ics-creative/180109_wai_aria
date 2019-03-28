@@ -11,7 +11,6 @@ export class AppComponent {
   /**
    * クリックしたときのイベントハンドラーです。
    * @param event イベントオブジェクトです。
-   * @private
    */
    _handleClick(event: MouseEvent): void {
     // イベント発生源の要素を取得
