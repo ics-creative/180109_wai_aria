@@ -1,5 +1,5 @@
 <template>
-  <div role="application">
+  <div>
     <ul role="tablist">
       <li role="presentation">
         <button
