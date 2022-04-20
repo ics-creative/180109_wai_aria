@@ -1,9 +1,9 @@
-import React, {useCallback, useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 
 /**
  * タブUIのサンプルアプリケーションです。
- * @author Yasunobu Ikeda
+ * @author IKEDA Yasunobu
  */
 const App = () => {
 
@@ -13,7 +13,7 @@ const App = () => {
   });
 
   // クリックしたときのイベントハンドラーです。
-  const handleClick = useCallback((event) => {
+  const handleClick = (event) => {
     // イベント発生源の要素を取得
     const element = event.currentTarget;
 
@@ -24,7 +24,7 @@ const App = () => {
     setState({
       tab: tabState,
     });
-  }, []);
+  };
 
   return (
     <div>
