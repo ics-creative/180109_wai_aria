@@ -1,7 +1,6 @@
 /* 装飾 */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
-  font-feature-settings: "pkna";
+  font-family: sans-serif;
 }
 
 [role="tablist"] {
@@ -34,16 +33,7 @@ button {
   max-width: 480px;
   line-height: 175%;
 }
-
-/* UI制御のための指定 */
-[aria-hidden="true"] {
-  display: none;
-}
-
-[aria-hidden="false"] {
-  display: block;
-}
-
+/* 選択状態の装飾 */
 [aria-selected="true"] {
   background-color: royalblue;
   color: white;
