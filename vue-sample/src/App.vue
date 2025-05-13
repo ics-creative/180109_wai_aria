@@ -1,122 +1,125 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// タブデータの定義
+const CONTENT_LIST = [
+  {
+    id: "1",
+    label: "カベルネ・ソーヴィニョン",
+    content:
+      "カベルネ・ソーヴィニョンはブドウの一品種。赤ワインの中でも渋くて重い味わいが特徴です。",
+  },
+  {
+    id: "2",
+    label: "メルロー",
+    content:
+      "メルローはブドウの一品種。味はカベルネ・ソーヴィニョンほど酸味やタンニンは強くなく、芳醇でまろやかで繊細な味わいです。",
+  },
+  {
+    id: "3",
+    label: "ピノ・ノワール",
+    content:
+      "ピノ・ノワールはブドウの一品種。カベルネ・ソーヴィニョンと対照的で比較的軽口な味わいです。",
+  },
+];
+
+// ステートを定義
+const activeTabId = ref("1");
+
+// クリックしたときのイベントハンドラーです。
+const handleClick = (event: MouseEvent) => {
+  const element = event.currentTarget as HTMLElement;
+  const controlsId = element.getAttribute("aria-controls");
+
+  if (!controlsId) {
+    return;
+  }
+
+  const tabId = controlsId.replace('panel-', '');
+  if (!tabId) {
+    return;
+  }
+  activeTabId.value = tabId;
+};
+</script>
+
 <template>
   <div>
     <ul role="tablist">
-      <li role="presentation">
+      <li v-for="tab in CONTENT_LIST" :key="tab.id" role="presentation">
         <button
-            aria-controls="panel1"
-            role="tab"
-            v-bind:aria-selected="tab === 'panel1' ? 'true' : 'false'"
-            v-on:click="handleClick"
+          role="tab"
+          :id="`tab-${tab.id}`"
+          :aria-controls="`panel-${tab.id}`"
+          :aria-selected="activeTabId === tab.id"
+          @click="handleClick"
         >
-          カベルネ・ソーヴィニョン
-        </button>
-      </li>
-      <li role="presentation">
-        <button
-            aria-controls="panel2"
-            role="tab"
-            v-bind:aria-selected="tab === 'panel2' ? 'true' : 'false'"
-            v-on:click="handleClick"
-        >
-          メルロー
-        </button>
-      </li>
-      <li role="presentation">
-        <button
-            aria-controls="panel3"
-            role="tab"
-            v-bind:aria-selected="tab === 'panel3' ? 'true' : 'false'"
-            v-on:click="handleClick"
-        >
-          ピノ・ノワール
+          {{ tab.label }}
         </button>
       </li>
     </ul>
-    <div
-        id="panel1"
-        aria-labelledby="tab1"
-        v-if="tab === 'panel1'"
+    <div v-for="tab in CONTENT_LIST" :key="tab.id">
+      <div
         role="tabpanel"
+        :id="`panel-${tab.id}`"
+        :aria-labelledby="`tab-${tab.id}`"
+        :hidden="activeTabId !== tab.id "
         class="panel"
-    >
-      カベルネ・ソーヴィニョンはブドウの一品種。赤ワインの中でも渋くて重い味わいが特徴です。
-    </div>
-    <div
-        id="panel2"
-        aria-labelledby="tab2"
-        v-if="tab === 'panel2'"
-        role="tabpanel"
-        class="panel"
-    >
-      メルローはブドウの一品種。味はカベルネ・ソーヴィニョンほど酸味やタンニンは強くなく、芳醇でまろやかで繊細な味わいです。
-    </div>
-    <div
-        id="panel3"
-        aria-labelledby="tab3"
-        v-if="tab === 'panel3'"
-        role="tabpanel"
-        class="panel"
-    >
-      ピノ・ノワールはブドウの一品種。カベルネ・ソーヴィニョンと対照的で比較的軽口な味わいです。
+      >
+        {{ tab.content }}
+      </div>
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      tab: "panel1",
-    };
-  },
-  methods: {
-    /**
-     * クリックしたときのイベントハンドラーです。
-     * @param event イベントオブジェクトです。
-     * @private
-     */
-    handleClick(event) {
-      // イベント発生源の要素を取得
-      const element = event.currentTarget;
-      // aria-controls 属性の値を取得
-      const tabState = element.getAttribute("aria-controls");
-      // プロパティーを更新
-      this.tab = tabState;
-    },
-  },
-};
-</script>
 
 <style scoped>
 /* 装飾 */
 [role="tablist"] {
   display: flex;
+  margin-bottom: 0;
 }
+
 ul {
   padding: 0;
   margin: 0;
 }
+
 li {
   list-style: none;
   margin: 0;
 }
+
 button {
   appearance: none;
   padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  background: #f8f8f8;
+  cursor: pointer;
+  margin-right: 5px;
+  border-radius: 4px 4px 0 0;
 }
+
+button:not([aria-selected="true"]):hover {
+  background: #e8e8e8;
+}
+
 [role="tabpanel"] {
-  border: 1px solid lightgray;
+  border: 1px solid #ccc;
   padding: 2rem;
+  background: #fff;
 }
+
 /* UI制御のための指定 */
 [aria-selected="true"] {
   background-color: royalblue;
   color: white;
 }
+
 .panel {
-  border: 1px solid lightgray;
   padding: 2rem;
   max-width: 480px;
   line-height: 175%;
+  background: #fff;
 }
 </style>
