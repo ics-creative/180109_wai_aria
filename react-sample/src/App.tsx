@@ -29,7 +29,7 @@ export const App: FC = () => {
     },
   ];
 
-  // ステートを定義
+  // タブの選択状態をステート管理
   const [state, setState] = useState<string>("1");
 
   // クリックしたときのイベントハンドラーです。

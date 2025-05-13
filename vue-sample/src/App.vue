@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
 // タブデータの定義
 const CONTENT_LIST = [
@@ -7,19 +7,19 @@ const CONTENT_LIST = [
     id: "1",
     label: "カベルネ・ソーヴィニョン",
     content:
-      "カベルネ・ソーヴィニョンはブドウの一品種。赤ワインの中でも渋くて重い味わいが特徴です。",
+        "カベルネ・ソーヴィニョンはブドウの一品種。赤ワインの中でも渋くて重い味わいが特徴です。",
   },
   {
     id: "2",
     label: "メルロー",
     content:
-      "メルローはブドウの一品種。味はカベルネ・ソーヴィニョンほど酸味やタンニンは強くなく、芳醇でまろやかで繊細な味わいです。",
+        "メルローはブドウの一品種。味はカベルネ・ソーヴィニョンほど酸味やタンニンは強くなく、芳醇でまろやかで繊細な味わいです。",
   },
   {
     id: "3",
     label: "ピノ・ノワール",
     content:
-      "ピノ・ノワールはブドウの一品種。カベルネ・ソーヴィニョンと対照的で比較的軽口な味わいです。",
+        "ピノ・ノワールはブドウの一品種。カベルネ・ソーヴィニョンと対照的で比較的軽口な味わいです。",
   },
 ];
 
@@ -35,7 +35,7 @@ const handleClick = (event: MouseEvent) => {
     return;
   }
 
-  const tabId = controlsId.replace('panel-', '');
+  const tabId = controlsId.replace("panel-", "");
   if (!tabId) {
     return;
   }
@@ -48,11 +48,11 @@ const handleClick = (event: MouseEvent) => {
     <ul role="tablist">
       <li v-for="tab in CONTENT_LIST" :key="tab.id" role="presentation">
         <button
-          role="tab"
-          :id="`tab-${tab.id}`"
-          :aria-controls="`panel-${tab.id}`"
-          :aria-selected="activeTabId === tab.id"
-          @click="handleClick"
+            role="tab"
+            :id="`tab-${tab.id}`"
+            :aria-controls="`panel-${tab.id}`"
+            :aria-selected="activeTabId === tab.id"
+            @click="handleClick"
         >
           {{ tab.label }}
         </button>
@@ -60,11 +60,11 @@ const handleClick = (event: MouseEvent) => {
     </ul>
     <div v-for="tab in CONTENT_LIST" :key="tab.id">
       <div
-        role="tabpanel"
-        :id="`panel-${tab.id}`"
-        :aria-labelledby="`tab-${tab.id}`"
-        :hidden="activeTabId !== tab.id "
-        class="panel"
+          role="tabpanel"
+          :id="`panel-${tab.id}`"
+          :aria-labelledby="`tab-${tab.id}`"
+          :hidden="activeTabId !== tab.id"
+          class="panel"
       >
         {{ tab.content }}
       </div>
